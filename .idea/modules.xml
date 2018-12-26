@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/sc-client/sc-client.iml" filepath="$PROJECT_DIR$/sc-client/sc-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sc-feign/sc-feign.iml" filepath="$PROJECT_DIR$/sc-feign/sc-feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sc-project.iml" filepath="$PROJECT_DIR$/sc-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sc-provider/sc-provider.iml" filepath="$PROJECT_DIR$/sc-provider/sc-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sc-server/sc-server.iml" filepath="$PROJECT_DIR$/sc-server/sc-server.iml" />
+    </modules>
+  </component>
+</project>
