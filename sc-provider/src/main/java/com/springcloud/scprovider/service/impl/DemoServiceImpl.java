@@ -11,7 +11,6 @@ public class DemoServiceImpl implements DemoService{
 
     @Autowired
     private AmqpTemplate amqpTemplate;
-
     @Value("${server.port}")
     String port;
     @Override
@@ -22,5 +21,19 @@ public class DemoServiceImpl implements DemoService{
     @Override
     public void sendMes(String words) {
         this.amqpTemplate.convertAndSend("demoQue",words);
+    }
+
+    @Override
+    public void sendMesByTopic(String words) {
+        this.amqpTemplate.convertAndSend("topicExchange","topic.queue1",words);
+    }
+    @Override
+    public void sendMesByTopic2(String words) {
+        this.amqpTemplate.convertAndSend("topicExchange","topic.queue2",words);
+    }
+
+    @Override
+    public void sendMesByfanout(String words) {
+        this.amqpTemplate.convertAndSend("fanoutExchange","",words);
     }
 }

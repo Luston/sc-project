@@ -21,4 +21,23 @@ public class DemoContrl {
         demoService.sendMes(words);
         return "OK";
     }
+
+    @RequestMapping("/sendBytopic")
+    public String sendByTopic(String words){
+        System.out.println("123");
+        demoService.sendMesByTopic(words);
+        return "OK";
+    }
+    @RequestMapping("/sendBytopic2")
+    public String sendBytopic2(String words){
+        System.out.println("123");
+        demoService.sendMesByTopic2(words);
+        return "OK";
+    }
+    @RequestMapping("/sendByfanout")
+    public String sendByfanout(String words){
+        System.out.println("123");
+        demoService.sendMesByfanout(words);
+        return "OK";
+    }
 }
