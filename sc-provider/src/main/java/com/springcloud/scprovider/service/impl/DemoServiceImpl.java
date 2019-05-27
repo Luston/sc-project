@@ -1,5 +1,6 @@
 package com.springcloud.scprovider.service.impl;
 
+import com.springcloud.scprovider.pojo.UserInfo;
 import com.springcloud.scprovider.service.DemoService;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,13 @@ public class DemoServiceImpl implements DemoService{
     @Override
     public void sendMesByfanout(String words) {
         this.amqpTemplate.convertAndSend("fanoutExchange","",words);
+    }
+    @Override
+    public UserInfo sendUser(String name) {
+        UserInfo userInfo=new UserInfo();
+        userInfo.setUserName(name);
+        userInfo.setAge(18);
+        userInfo.setAddress("上海");
+        return userInfo;
     }
 }

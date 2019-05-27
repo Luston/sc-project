@@ -1,5 +1,6 @@
 package com.springcloud.scprovider.controller;
 
+import com.springcloud.scprovider.pojo.UserInfo;
 import com.springcloud.scprovider.service.DemoService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,12 @@ public class DemoContrl {
     @RequestMapping("/hi")
     public String say(String name){
         return demoService.say(name);
+    }
+
+    @RequestMapping("/user")
+    public UserInfo sendUser(String name){
+        System.out.println("接收参数："+name);
+        return demoService.sendUser(name);
     }
 
     @RequestMapping("/sendByDirect")
