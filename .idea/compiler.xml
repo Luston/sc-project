@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="sc-client" />
         <module name="sc-feign" />
+        <module name="sc-hystrix-dashboard" />
         <module name="sc-project" />
         <module name="sc-provider" />
         <module name="sc-server" />
@@ -16,6 +17,7 @@
     <bytecodeTargetLevel>
       <module name="sc-client" target="1.8" />
       <module name="sc-feign" target="1.8" />
+      <module name="sc-hystrix-dashboard" target="1.8" />
       <module name="sc-project" target="1.8" />
       <module name="sc-provider" target="1.8" />
       <module name="sc-server" target="1.8" />

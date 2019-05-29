@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/sc-client/pom.xml" />
         <option value="$PROJECT_DIR$/sc-feign/pom.xml" />
         <option value="$PROJECT_DIR$/sc-server-v1/pom.xml" />
+        <option value="$PROJECT_DIR$/sc-hystrix-dashboard/pom.xml" />
       </list>
     </option>
   </component>
