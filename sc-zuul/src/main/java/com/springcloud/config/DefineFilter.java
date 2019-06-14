@@ -19,6 +19,13 @@ public class DefineFilter extends ZuulFilter{
 
     @Override
     public boolean shouldFilter() {
+        RequestContext ctx=RequestContext.getCurrentContext();
+        HttpServletRequest httpServletRequest=ctx.getRequest();
+        String url=httpServletRequest.getRequestURI();
+        System.out.println(url);
+        if("/sc-client/hi".equals(url)){
+            return false;
+        }
         return true;
     }
 
