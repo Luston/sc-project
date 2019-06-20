@@ -41,6 +41,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		<!--监听github，自动更新配置文件-->
+		<!--<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-monitor</artifactId>
+		</dependency>-->
 	</dependencies>
 
 	<build>
