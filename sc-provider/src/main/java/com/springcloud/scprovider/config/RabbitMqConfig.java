@@ -11,7 +11,7 @@ public class RabbitMqConfig {
      */
     @Bean
     public Queue queue(){
-        return new Queue("demoQue");
+        return new Queue("demoQue",true);
     }
     /**
      * topic Exchange形式
@@ -25,8 +25,13 @@ public class RabbitMqConfig {
         return new Queue("topic.queue2");
     }
     @Bean
+    /**
+     * 参数1 name ：交互器名
+     * 参数2 durable ：是否持久化
+     * 参数3 autoDelete ：当所有消费客户端连接断开后，是否自动删除队列
+     */
     public TopicExchange topicExchange(){
-        return new TopicExchange("topicExchange");
+        return new TopicExchange("topicExchange",true,false);
     }
     /**
      * fanout Exchange形式
@@ -59,7 +64,7 @@ public class RabbitMqConfig {
     }
 
     /**
-     *fanout Excahnge 绑定
+     *fanout Exchange 绑定
      */
     @Bean
     public Binding bindingExchangeMessage3(Queue queue3,FanoutExchange fanoutExchange){

@@ -1,4 +1,4 @@
-package com.springcloud.scfeign.seervice;
+package com.springcloud.scfeign.service;
 
 import com.springcloud.scfeign.pojo.User;
 import org.springframework.stereotype.Component;

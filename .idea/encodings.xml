@@ -3,9 +3,11 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sc-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sc-configer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sc-feign" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sc-hystrix-dashboard" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sc-provider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sc-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sc-zuul" charset="UTF-8" />
   </component>
 </project>

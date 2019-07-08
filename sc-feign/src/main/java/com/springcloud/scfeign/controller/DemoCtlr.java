@@ -1,7 +1,7 @@
 package com.springcloud.scfeign.controller;
 
 import com.springcloud.scfeign.pojo.User;
-import com.springcloud.scfeign.seervice.DemoService;
+import com.springcloud.scfeign.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
