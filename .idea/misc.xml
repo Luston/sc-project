@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/sc-zuul/pom.xml" />
         <option value="$PROJECT_DIR$/configer/pom.xml" />
         <option value="$PROJECT_DIR$/sc-configer/pom.xml" />
+        <option value="$PROJECT_DIR$/sc-zipkin/pom.xml" />
       </list>
     </option>
   </component>

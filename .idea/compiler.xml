@@ -26,6 +26,7 @@
       <module name="sc-provider" target="1.8" />
       <module name="sc-server" target="1.8" />
       <module name="sc-server-v1" target="1.8" />
+      <module name="sc-zipkin" target="1.8" />
       <module name="sc-zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
