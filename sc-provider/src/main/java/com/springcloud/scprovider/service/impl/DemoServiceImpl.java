@@ -3,6 +3,7 @@ package com.springcloud.scprovider.service.impl;
 import com.springcloud.scprovider.pojo.UserInfo;
 import com.springcloud.scprovider.service.DemoService;
 import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class DemoServiceImpl implements DemoService{
 
     @Autowired
-    private AmqpTemplate amqpTemplate;
+    private RabbitTemplate rabbitTemplate;
     @Value("${server.port}")
     String port;
     @Override
@@ -21,25 +22,25 @@ public class DemoServiceImpl implements DemoService{
 
     @Override
     public void sendMes(String words) {
-        this.amqpTemplate.convertAndSend("demoQue",words);
+        this.rabbitTemplate.convertAndSend("demoQue",words);
     }
 
     @Override
     public void sendMesByTopic(String words) {
-        this.amqpTemplate.convertAndSend("topicExchange","topic.queue1",words);
+        this.rabbitTemplate.convertAndSend("topicExchange","topic1.queue1",words);
     }
     @Override
     public void sendMesByTopic2(String words) {
-        this.amqpTemplate.convertAndSend("topicExchange","topic.queue2",words);
+        this.rabbitTemplate.convertAndSend("topicExchange","topic.queue2",words);
     }
 
     @Override
     public void sendMesByfanout(String words) {
-        this.amqpTemplate.convertAndSend("fanoutExchange","",words);
+        this.rabbitTemplate.convertAndSend("fanoutExchange","",words);
     }
     @Override
     public UserInfo sendUser(String name) {
-        UserInfo userInfo=new UserInfo();
+        UserInfo userInfo=UserInfo.INSTANCE;
         userInfo.setUserName(name);
         userInfo.setAge(18);
         userInfo.setAddress("上海");

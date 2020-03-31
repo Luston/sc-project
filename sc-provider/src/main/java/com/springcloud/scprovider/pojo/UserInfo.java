@@ -1,8 +1,11 @@
 package com.springcloud.scprovider.pojo;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
-public class UserInfo implements Serializable {
+import java.io.Serializable;
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
+public enum  UserInfo implements Serializable {
+    INSTANCE;
     private String userName;
     private String address;
     private Integer age;

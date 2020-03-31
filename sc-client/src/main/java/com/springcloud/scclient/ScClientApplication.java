@@ -18,7 +18,7 @@ public class ScClientApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ScClientApplication.class, args);
 	}
-	/*@Bean
+	@Bean
 	public ServletRegistrationBean getServlet(){
 		HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
 		ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
@@ -26,5 +26,5 @@ public class ScClientApplication {
 		registrationBean.addUrlMappings("/actuator/hystrix.stream");
 		registrationBean.setName("HystrixMetricsStreamServlet");
 		return registrationBean;
-	}*/
+	}
 }

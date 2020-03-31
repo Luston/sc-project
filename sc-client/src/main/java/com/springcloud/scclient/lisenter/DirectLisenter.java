@@ -1,4 +1,4 @@
-/*
+
 package com.springcloud.scclient.lisenter;
 
 import com.rabbitmq.client.Channel;
@@ -6,10 +6,10 @@ import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
-*/
+
 /**
  * 监听消息队列
- *//*
+ */
 
 @Component
 public class DirectLisenter {
@@ -38,4 +38,4 @@ public class DirectLisenter {
         System.out.println("recieve:来自fanout.queue2======="+words);
     }
 }
-*/
+

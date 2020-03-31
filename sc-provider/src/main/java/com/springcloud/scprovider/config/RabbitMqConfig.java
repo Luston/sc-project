@@ -1,11 +1,18 @@
 package com.springcloud.scprovider.config;
 
 import org.springframework.amqp.core.*;
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.rabbit.support.CorrelationData;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.annotation.Resource;
+
 @Configuration
 public class RabbitMqConfig {
+
     /**
      *direct Exchange形式
      */
@@ -48,7 +55,10 @@ public class RabbitMqConfig {
     public FanoutExchange fanoutExchange(){
         return new FanoutExchange("fanoutExchange");
     }
-
+    @Bean
+    public DirectExchange directExchange(){
+        return new DirectExchange("directExchange");
+    }
     /**
      *topic Exchange 绑定
      */
@@ -76,4 +86,32 @@ public class RabbitMqConfig {
         return BindingBuilder.bind(queue4).to(fanoutExchange);
     }
 
+    @Bean
+    public Binding bindingExchangeMessage(Queue queue,DirectExchange directExchange){
+        return BindingBuilder.bind(queue).to(directExchange).with("direct");
+    }
+
+    @Bean
+    public RabbitTemplate rabbitTemplate(CachingConnectionFactory connectionFactory){
+        RabbitTemplate rabbitTemplate=new RabbitTemplate(connectionFactory);
+        rabbitTemplate.setMandatory(true);
+        rabbitTemplate.setConfirmCallback(new RabbitTemplate.ConfirmCallback() {
+            @Override
+            public void confirm(CorrelationData correlationData, boolean b, String s) {
+                if(b){
+                    System.out.println("发送到交换机成功。。");
+                }else{
+                    System.out.println("发送到交换机失败。。");
+                }
+            }
+        });
+        rabbitTemplate.setReturnCallback(new RabbitTemplate.ReturnCallback() {
+            @Override
+            public void returnedMessage(Message message, int i, String s, String s1, String s2) {
+                String correlationId = message.getMessageProperties().getCorrelationIdString();
+                System.out.println("correlationId......"+correlationId);
+            }
+        });
+        return rabbitTemplate;
+    }
 }
